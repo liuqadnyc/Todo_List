@@ -26,6 +26,13 @@ $("input[type='text']").keypress(function(event){
 	}
 });
 
+
 $("#addbtn").click(function(){
+	var arrowClass = $("#arrow").prop("class");  // To read the *current* value , you must use the proc
+	if(arrowClass.baseVal.indexOf("up") === -1){
+		$(".fa-angle-double-down").attr("class","fas fa-angle-double-up");
+	}else{
+		$(".fa-angle-double-up").attr("class","fas fa-angle-double-down");
+	}
 	$("input[type='text']").fadeToggle();
 });
